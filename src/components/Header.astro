@@ -1,0 +1,48 @@
+<header
+  id="main-header"
+  class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex justify-center items-center px-4 py-2 rounded-full shadow-lg transition-all duration-300 border border-yellow-400 bg-white/10 backdrop-blur-md"
+>
+  <nav class="flex flex-row gap-x-4 text-white">
+    <a href="#top" class="hover:text-yellow-400 transition-colors">Inicio</a>
+    <a href="#Experiencia" class="hover:text-yellow-400 transition-colors">Experiencia</a>
+    <a href="#Proyectos" class="hover:text-yellow-400 transition-colors">Galeria</a>
+    <a href="#Sobre-mí" class="hover:text-yellow-400 transition-colors">Sobre mí</a>
+  </nav>
+</header>
+
+<style>
+/* Estilo base del navbar */
+#main-header {
+  padding: 0.5rem 1rem; /* Padding general del header */
+  max-width: 90%; /* Limitar ancho máximo */
+  font-size: 1rem; /* Tamaño base de fuente */
+}
+
+#main-header nav {
+  display: flex;
+  justify-content: space-between; /* Distribuir enlaces uniformemente */
+}
+
+#main-header nav a {
+  font-size: 1rem; /* Tamaño base de los enlaces */
+  padding: 0.25rem 0.5rem; /* Espaciado interno de los enlaces */
+  white-space: nowrap; /* Evitar que los textos se rompan */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  #main-header {
+    padding: 0.25rem 0.75rem; /* Reducir padding en dispositivos pequeños */
+    max-width: 95%; /* Ajustar el ancho */
+  }
+
+  #main-header nav {
+    gap: 0.5rem; /* Reducir espacio entre enlaces */
+  }
+
+  #main-header nav a {
+    font-size: 0.875rem; /* Reducir el tamaño de los enlaces */
+    padding: 0.2rem 0.4rem; /* Compactar enlaces */
+  }
+}
+</style>

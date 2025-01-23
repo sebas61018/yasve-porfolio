@@ -1,0 +1,37 @@
+---
+import ExpItems from "./ExpItems.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Enero 2024 - Diciembre 2024",
+    title: "Community Manager en Crisart",
+    description:
+      "Diseño y ejecución de estrategias de contenido, gestión de métricas y campañas publicitarias para sectores como estética, automotriz y entretenimiento. Incrementé seguidores en TikTok (+1,000 en una semana) y mejoré la interacción mediante campañas orientadas a resultados.",
+    link: "#",
+  },
+  {
+    date: "Julio 2023 - Diciembre 2023",
+    title: "Auxiliar de Comunicaciones en Universidad de Santander UDES",
+    description:
+      "Fortalecí la comunicación interna y externa, diseñé estrategias digitales y optimicé procesos, logrando un aumento del 30% en interacción de usuarios y una mejora del 20% en tiempos de publicación en redes sociales.",
+    link: "#",
+  },
+  {
+    date: "Diciembre 2022 - Junio 2023",
+    title: "Community Manager en Crisart Agencia de Publicidad",
+    description:
+      "Implementé estrategias de storytelling y formatos innovadores, logrando un aumento del 40% en alcance promedio de publicaciones. Reduje un 80% el tiempo de respuesta en interacciones digitales, mejorando la experiencia del cliente.",
+    link: "#",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EXPERIENCE.map(expe =>(
+            <li class="mb-10 ms-4">
+                <ExpItems {...expe} />
+            </li>
+        ))
+    }
+</ol>

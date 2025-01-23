@@ -1,0 +1,71 @@
+---
+import Badge from '../components/Badge.astro'
+import Layout from '../layouts/Layout.astro'
+import LinkeIcon from '../components/logos/Linke.astro'
+import InstaIcon from '../components/logos/insta.astro'
+import WhatIcon from '../components/logos/what.astro'
+import Wordk from '../components/logos/work.astro'
+import Hd from '../components/logos/Hd.astro'
+import SocialPeal from '../components/logos/SocialPeal.astro'
+import Exp from '../components/Exp.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import Vide_galery from '../components/Vide_galery.astro'
+import SobreMi from '../components/sobreMi.astro'
+---
+
+<Layout title="comunicación, marketing digital y diseño gráfico">
+	<main class="px-4">
+		
+		<SectionContainer class="py-24 pb-24">
+			<img src="https://media.licdn.com/dms/image/v2/D4E03AQEIA6NKqtiAeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730826151407?e=1743033600&v=beta&t=h1UH39EJcxL6-xpXOAekSUAWMrmPNHPAZ27YhT1PwVQ" 
+    			alt="yasve photo" class="rounded-full size-12 w-16 h-16 mb-5"/>
+
+			<h1 class="text-white text-3xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 md:text-4xl lg:text-5xl">Hey, soy Yasve 
+				<a href="https://www.linkedin.com/in/yasveidy-martinez-53257a186/"
+				target="_blank"
+				rel="noopener"
+				class="flex justify-center items-center"><Badge></Badge></a>
+			</h1>
+
+			<h2 class="lg:text-2xl text-wrap max-w-[800px]">
+			<span>+3 años de experiencia</span>,
+			<span class="text-yellow-400">Experta en comunicación, marketing digital y diseño gráfico.</span> Desde Ocaña, 
+			Norte de Santander, creo estrategias únicas para proyectos memorables. 🌟
+			</h2>
+
+			<nav class="flex gap-4 mt-4 flex-wrap">
+				<SocialPeal href="https://www.linkedin.com/in/yasveidy-martinez-53257a186/">
+					<LinkeIcon class="size-4 lg:size-6"/>
+					linkedin
+				</SocialPeal>
+				<SocialPeal href="https://www.instagram.com/martinezyasve_05/">
+					<InstaIcon class="size-4 lg:size-6"/>
+					Instagram
+				</SocialPeal>
+				<SocialPeal href="https://api.whatsapp.com/send?phone=573136632377&text=%C2%A1Hola!%20%F0%9F%91%8B%0AVeo%20que%20llegaste%20aqu%C3%AD%20desde%20mi%20landing%20page.%20%F0%9F%8E%AF%0AEstoy%20encantada%20de%20saber%20que%20te%20interesa%20conocer%20m%C3%A1s%20sobre%20mis%20servicios%20como%20comunicadora.%20%F0%9F%93%A2%E2%9C%A8%0A%0APor%20favor%2C%20no%20dudes%20en%20escribirme%20o%20dejar%20tus%20datos%20de%20contacto.%20Estoy%20aqu%C3%AD%20para%20ayudarte%20a%20comunicar%20tu%20mensaje%20de%20manera%20efectiva%20y%20creativa.%20%F0%9F%8C%9F%0A%0A%C2%A1Espero%20saber%20de%20ti%20pronto!%20%F0%9F%98%8A%0A%0A">
+					<WhatIcon class="size-4 lg:size-6"/>
+					whatsapp
+				</SocialPeal>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="Experiencia" class="pb-24">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<Wordk class="size-6"/>
+				Experiencia Laboral</h2>
+			<Exp/>
+		</SectionContainer>
+
+		<SectionContainer id="Proyectos" class="pb-24">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<Hd class="size-6"/>
+				Galeria</h2>
+				<Vide_galery/>
+		</SectionContainer>
+
+		<SectionContainer id="Sobre-mí" class="pb-24 flex flex-col lg:flex-row items-center lg:items-start gap-12">
+			<SobreMi />
+		</SectionContainer>
+		
+	</main>
+</Layout>

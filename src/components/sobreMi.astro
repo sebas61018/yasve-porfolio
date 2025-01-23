@@ -1,0 +1,48 @@
+---
+import Person from '../components/logos/women.astro';
+---
+
+<div class="flex flex-col lg:flex-row lg:items-center lg:gap-8">
+  <!-- Contenido textual -->
+  <div class="lg:w-3/5 text-center lg:text-left">
+    <h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center justify-center lg:justify-start">
+      <Person class="size-6" />
+      Sobre mí
+    </h2>
+    <p class="mt-4 lg:text-lg">
+      Soy una <span class="text-yellow-400">comunicadora social</span> con experiencia en gestión de contenido, redes sociales y marketing digital. Me especializo en desarrollar <span class="text-yellow-400">estrategias creativas</span> que aumentan la visibilidad de marcas y negocios, conectando con sus audiencias a través de contenido auténtico y relevante.
+    </p>
+    <p class="mt-4 lg:text-lg">
+      Apasionada por analizar <span class="text-yellow-400">tendencias</span> y entender el comportamiento del consumidor, transformo insights en campañas efectivas que fortalecen la identidad de las marcas. Con habilidades en <span class="text-yellow-400">SEO</span>, planificación de contenido y gestión de comunidades, mi enfoque está en contar historias únicas que generen conexiones duraderas.
+    </p>
+    <p class="mt-4 lg:text-lg">
+      Comprometida con el <span class="text-yellow-400">aprendizaje continuo</span>, disfruto enfrentar desafíos que me permitan crecer profesionalmente mientras ayudo a otros a alcanzar sus objetivos.
+    </p>
+  </div>
+
+  <!-- Imagen -->
+  <div class="lg:w-2/5 flex justify-center mt-6 lg:mt-0">
+    <div class="relative w-[200px] sm:w-[250px] h-auto rounded-lg shadow-lg border-4 border-gray-800 overflow-hidden animate-levitate rotate-3">
+      <img
+        src="https://i.ibb.co/Qf6J4Cf/fondo-mi.jpg"
+        alt="Fondo de sobre mí"
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+</div>
+
+<style is:global>
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0) rotate(3deg); /* Mantener rotación */
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg); /* Levitar y mantener la rotación */
+  }
+}
+
+.animate-levitate {
+  animation: levitate 3s ease-in-out infinite; /* Duración 3s, loop infinito */
+}
+</style>
