@@ -1,65 +1,86 @@
 ---
-import Video_1 from '../components/video/video_1.mp4';
-import Video_2 from '../components/video/video_2.mp4';
-import Video_3 from '../components/video/video_3.mp4';
+import Video_1 from "../components/video/video_1.mp4";
+import Video_2 from "../components/video/video_2.mp4";
+import Video_3 from "../components/video/video_3.mp4";
 ---
 
 <div class="space-y-8 max-w-[95%] md:max-w-[600px] mx-auto">
   <!-- Bloque 1: Video local -->
-  <div class="video-container flex flex-col md:flex-row items-center md:items-center gap-4 opacity-0 translate-y-10 transition-all duration-700">
+  <div
+    class="video-container flex flex-col md:flex-row items-center md:items-center gap-4 opacity-0 translate-y-10 transition-all duration-700"
+  >
     <div class="w-full md:w-[45%]">
-      <div class="aspect-w-4 aspect-h-3 group overflow-hidden transform transition duration-300 hover:scale-105 rounded-lg shadow-md">
+      <div
+        class="aspect-w-4 aspect-h-3 group overflow-hidden transform transition duration-300 hover:scale-105 rounded-lg shadow-md"
+      >
         <video
           class="w-full h-full object-cover"
           src={Video_1}
           controls
           title="Video 1"
-        ></video>
+          playsinline
+          muted
+          preload="metadata"></video>
       </div>
     </div>
     <div class="w-full md:w-[55%] text-center md:text-left">
       <h3 class="text-base font-bold mb-2 text-white">
-        ¿Qué cerveza tienes pensado tomar hoy? ¡Cualquier día es perfecto para refrescarte! Ven a Salomon’s
+        ¿Qué cerveza tienes pensado tomar hoy? ¡Cualquier día es perfecto para
+        refrescarte! Ven a Salomon’s
       </h3>
       <div class="h-[2px] w-[80px] bg-white mx-auto md:mx-0"></div>
     </div>
   </div>
 
   <!-- Bloque 2: Video local -->
-  <div class="video-container flex flex-col md:flex-row-reverse items-center md:items-center gap-4 opacity-0 translate-y-10 transition-all duration-700">
+  <div
+    class="video-container flex flex-col md:flex-row-reverse items-center md:items-center gap-4 opacity-0 translate-y-10 transition-all duration-700"
+  >
     <div class="w-full md:w-[45%]">
-      <div class="aspect-w-4 aspect-h-3 group overflow-hidden transform transition duration-300 hover:scale-105 rounded-lg shadow-md">
+      <div
+        class="aspect-w-4 aspect-h-3 group overflow-hidden transform transition duration-300 hover:scale-105 rounded-lg shadow-md"
+      >
         <video
           class="w-full h-full object-cover"
           src={Video_2}
           controls
           title="Video 2"
-        ></video>
+          playsinline
+          muted
+          preload="metadata"></video>
       </div>
     </div>
     <div class="w-full md:w-[55%] text-center md:text-left">
       <h3 class="text-base font-bold mb-2 text-white">
-        Así te enseñamos a crear un calendario de contenido efectivo, para que tengas todo ordenado y atraigas
+        Así te enseñamos a crear un calendario de contenido efectivo, para que
+        tengas todo ordenado y atraigas
       </h3>
       <div class="h-[2px] w-[80px] bg-white mx-auto md:mx-0"></div>
     </div>
   </div>
 
   <!-- Bloque 3: Video local -->
-  <div class="video-container flex flex-col md:flex-row items-center md:items-center gap-4 opacity-0 translate-y-10 transition-all duration-700">
+  <div
+    class="video-container flex flex-col md:flex-row items-center md:items-center gap-4 opacity-0 translate-y-10 transition-all duration-700"
+  >
     <div class="w-full md:w-[45%]">
-      <div class="aspect-w-4 aspect-h-3 group overflow-hidden transform transition duration-300 hover:scale-105 rounded-lg shadow-md">
+      <div
+        class="aspect-w-4 aspect-h-3 group overflow-hidden transform transition duration-300 hover:scale-105 rounded-lg shadow-md"
+      >
         <video
           class="w-full h-full object-cover"
           src={Video_3}
           controls
           title="Video 3"
-        ></video>
+          playsinline
+          muted
+          preload="metadata"></video>
       </div>
     </div>
     <div class="w-full md:w-[55%] text-center md:text-left">
       <h3 class="text-base font-bold mb-2 text-white">
-        ¡Errores comunes en redes sociales! La importancia de no ignorar a tus seguidores
+        ¡Errores comunes en redes sociales! La importancia de no ignorar a tus
+        seguidores
       </h3>
       <div class="h-[2px] w-[80px] bg-white mx-auto md:mx-0"></div>
     </div>
@@ -72,7 +93,7 @@ import Video_3 from '../components/video/video_3.mp4';
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.add("opacity-100", "translate-y-0");
           observer.unobserve(entry.target); // Deja de observar una vez que aparece
         }
       });
@@ -82,33 +103,46 @@ import Video_3 from '../components/video/video_3.mp4';
     }
   );
 
-  document.querySelectorAll('.video-container').forEach((video) => {
+  document.querySelectorAll(".video-container").forEach((video) => {
     observer.observe(video);
   });
+
+  document.querySelectorAll('video').forEach((video) => {
+  video.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+});
+
 </script>
 
 <style is:global>
-/* Estilos iniciales para los videos (opacidad y posición) */
-.video-container {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-/* Cuando aparecen, hacemos la transición */
-.video-container.opacity-100 {
-  opacity: 1;
-}
-
-.video-container.translate-y-0 {
-  transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-  .video-container video {
-    width: 100%;
-    height: auto;
-    max-height: 300px; /* Ajusta la altura máxima según sea necesario */
+  /* Estilos iniciales para los videos (opacidad y posición) */
+  .video-container {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
   }
-}
+
+  /* Cuando aparecen, hacemos la transición */
+  .video-container.opacity-100 {
+    opacity: 1;
+  }
+
+  .video-container.translate-y-0 {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .video-container video {
+      width: 100%;
+      height: auto;
+      max-height: 300px; /* Ajusta la altura máxima según sea necesario */
+    }
+  }
 </style>
