@@ -103,4 +103,12 @@ import Video_3 from '../components/video/video_3.mp4';
 .video-container.translate-y-0 {
   transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+  .video-container video {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Ajusta la altura máxima según sea necesario */
+  }
+}
 </style>
